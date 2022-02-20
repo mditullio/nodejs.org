@@ -133,11 +133,11 @@ mapped by the `docker` daemon:
 EXPOSE 8080
 ```
 
-Last but not least, define the command to run your app using `CMD` which defines
+Last but not least, define the command to run your app using `ENTRYPOINT` which defines
 your runtime. Here we will use `node server.js` to start your server:
 
 ```docker
-CMD [ "node", "server.js" ]
+ENTRYPOINT [ "node", "server.js" ]
 ```
 
 Your `Dockerfile` should now look like this:
@@ -161,7 +161,7 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "node", "server.js" ]
+ENTRYPOINT [ "node", "server.js" ]
 ```
 
 ## .dockerignore file
